@@ -1,0 +1,21 @@
+export interface ApiError {
+  message: string;
+  status: number;
+  code?: string | number;
+}
+
+export interface PaginationParams {
+  sort?: string;
+  order?: 'asc' | 'desc';
+  page?: number;
+  limit?: number;
+}
+
+export interface PaginatedResponse<T> {
+  data: T[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+  success?: boolean;
+}

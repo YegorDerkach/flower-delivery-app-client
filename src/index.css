@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --bg-rose: #fff8fb;
+  --bg-rose-2: #fff0f6;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(24px 24px at 24px 24px, rgba(255,192,203,0.15), transparent 40%),
+    radial-gradient(18px 18px at 60px 12px, rgba(255,182,193,0.12), transparent 42%),
+    linear-gradient(180deg, var(--bg-rose), var(--bg-rose));
+  background-size: 120px 120px, 120px 120px, auto;
+  background-position: 0 0, 60px 60px, 0 0;
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp .35s ease forwards;
+}
+
+
+.fade-stagger > * {
+  opacity: 0;
+  animation: fadeUp .35s ease forwards;
+}
+.fade-stagger > *:nth-child(1) { animation-delay: .02s; }
+.fade-stagger > *:nth-child(2) { animation-delay: .05s; }
+.fade-stagger > *:nth-child(3) { animation-delay: .08s; }
+.fade-stagger > *:nth-child(4) { animation-delay: .11s; }
+.fade-stagger > *:nth-child(5) { animation-delay: .14s; }
+.fade-stagger > *:nth-child(6) { animation-delay: .17s; }
